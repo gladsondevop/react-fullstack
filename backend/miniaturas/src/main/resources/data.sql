@@ -2,3 +2,5 @@ INSERT INTO MINIATURA(modelo,marca,escala,image) VALUES ('Shelby GT500 1964', 'D
 INSERT INTO MINIATURA(modelo,marca,escala,image) VALUES ('Dodge Charger 1966 V8', 'DeAgostini', '1/43', 'https://staticpasa2.cdnstatics2.com/static/upl/img//028V05/entrega_028V05002_c2_1602696372909.jpg');
 INSERT INTO MINIATURA(modelo,marca,escala,image) VALUES ('Camaro Z/28', 'DeAgostini', '1/43', 'https://staticpasa2.cdnstatics2.com/static/upl/img//028V05/entrega_028V05003_c3_1602696413411.jpg');
 INSERT INTO MINIATURA(modelo,marca,escala,image) VALUES ('Pontiac Firebird Trans AM 1970 V8', 'DeAgostini', '1/43', 'https://staticpasa2.cdnstatics2.com/static/upl/img//028V05/entrega_028V05005_c5_1602696489603.jpg');
+
+INSERT INTO USUARIO(email, nome, avatar, password) VALUES('gladson', 'Gladson Albuquerque', 'https://img.freepik.com/vetores-premium/ilustracao-de-guerreiro-viking-com-raiva_333547-9817.jpg', '123456')

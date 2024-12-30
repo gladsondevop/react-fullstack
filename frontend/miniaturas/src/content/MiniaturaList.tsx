@@ -10,6 +10,7 @@ import ConfirmDelete from "../components/modal/confirmDelete";
 import toast from "react-hot-toast";
 import MiniaturaModal from "./MiniaturaModal";
 import { useNavigate } from "react-router-dom";
+import SearchBarMiniatura from "../components/filter/SearchBarMiniatura";
 
 
 function MiniaturaList() {
@@ -98,6 +99,7 @@ function MiniaturaList() {
     <React.Fragment>
       <Card sx={{border: 1, borderRadius: 2, mb: 1, transform: 'scale(1)' }}>
         <CardHeader title="Miniaturas"></CardHeader>
+        <SearchBarMiniatura setMiniaturas={setMiniaturas} setTotal={setTotal}></SearchBarMiniatura>
         <Divider />
         <TableContainer>
           <Table>

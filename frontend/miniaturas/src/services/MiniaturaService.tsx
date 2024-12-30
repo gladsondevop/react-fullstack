@@ -8,11 +8,12 @@ class MiniaturaService {
         return axios.post("http://localhost:8080" + this.serverPath, miniatura)
     }
 
-    getAllPaginated(page:number, limit:number) {
+    getAllPaginated(page:number, limit:number, filterValue:String) {
         return axios.get("http://localhost:8080" + this.serverPath, {
             headers: {
                 "page": page,
-                "size": limit
+                "size": limit,
+                "filterValue": filterValue
             }
         })
     }

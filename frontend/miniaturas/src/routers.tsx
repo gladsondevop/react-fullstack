@@ -1,21 +1,25 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./components/layout";
+import { BrowserRouter, Route, RouteObject, Routes } from "react-router-dom";
 import MiniaturaList from "./content/MiniaturaList";
-import MiniaturaAddForm from "./content/MiniaturaAddForm";
-import MiniaturaEditForm from "./content/MiniaturaEditForm";
+import MiniaturaForm from "./content/MiniaturaForm";
+import Layout from "./components/layout";
+import RequiredAuth from "./content/login/RequiredAuth";
+import Login from "./content/login/Login";
 
 const Routers = () => {
     return (
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<MiniaturaList />} />
-            <Route path="/cadastro" element={<MiniaturaAddForm />} />
-            <Route path="/cadastro/:id" element={<MiniaturaEditForm />} />
-            {/* <Route path="/detalhes/:id" element={<Detalhes />} /> */}
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <>
+        <BrowserRouter>
+          <Layout >
+            <Routes>
+              <Route path="/" element={<RequiredAuth><MiniaturaList /></RequiredAuth>}  />
+              <Route path="/login" element={<Login />}  />
+              <Route path="/inicial" element={<RequiredAuth><MiniaturaList /></RequiredAuth>}  />
+              <Route path="/cadastro" element={<RequiredAuth><MiniaturaForm /></RequiredAuth> } />
+              <Route path="/cadastro/:id" element={<MiniaturaForm />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </>
     );
   };
   
