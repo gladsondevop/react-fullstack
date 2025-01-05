@@ -56,8 +56,7 @@ const MiniaturaForm: React.FC = () => {
         register,
         handleSubmit,
         formState: {errors},
-        setValue,
-        control
+        setValue
     } = useForm({resolver: yupResolver(schema)})
 
     const onSubmit = (data:IFormInput) => {
@@ -134,7 +133,7 @@ const MiniaturaForm: React.FC = () => {
                     helperText={errors.image?.message} />
 
                 
-                <Button type="submit" variant="contained" sx={{m:1}}>Cadastrar</Button>
+                <Button type="submit" variant="contained" sx={{m:1}}>Salvar</Button>
             </Box>
         </Card>
     );

@@ -76,7 +76,7 @@ const SearchBarMiniatura = ({setMiniaturas,setTotal}) =>{
   }
   const handleSubmit = (e) =>{
     e.preventDefault();
-    let miniaturaService = new MiniaturaService();
+    const miniaturaService = new MiniaturaService();
     miniaturaService.getAllPaginated(0,10,formData.filterValue).then((response) =>{
         setTotal(response.data.totalElements);
         setMiniaturas(response.data.content);

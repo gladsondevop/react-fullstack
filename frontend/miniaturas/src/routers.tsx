@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, RouteObject, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MiniaturaList from "./content/MiniaturaList";
 import MiniaturaForm from "./content/MiniaturaForm";
 import Layout from "./components/layout";

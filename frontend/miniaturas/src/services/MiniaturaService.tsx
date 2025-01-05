@@ -2,14 +2,17 @@ import axios from "axios";
 import { Miniatura } from "../model/miniatura";
 
 class MiniaturaService {
+
+    apiUrl = import.meta.env.VITE_API_URL;
+
     serverPath = "/minis"
 
     save(miniatura:Miniatura) {
-        return axios.post("http://localhost:8080" + this.serverPath, miniatura)
+        return axios.post(this.apiUrl + this.serverPath, miniatura)
     }
 
-    getAllPaginated(page:number, limit:number, filterValue:String) {
-        return axios.get("http://localhost:8080" + this.serverPath, {
+    getAllPaginated(page:number, limit:number, filterValue:string) {
+        return axios.get(this.apiUrl + this.serverPath, {
             headers: {
                 "page": page,
                 "size": limit,
@@ -19,15 +22,15 @@ class MiniaturaService {
     }
 
     delete(id:number) {
-        return axios.delete("http://localhost:8080" + this.serverPath + '/' + id)
+        return axios.delete(this.apiUrl + this.serverPath + '/' + id)
     }
 
     getById(id:number) {
-        return axios.get("http://localhost:8080" + this.serverPath + '/' + id)
+        return axios.get(this.apiUrl + this.serverPath + '/' + id)
     }
 
     update(miniatura:Miniatura) {
-        return axios.put("http://localhost:8080" + this.serverPath, miniatura)
+        return axios.put(this.apiUrl + this.serverPath, miniatura)
     }
 
 }

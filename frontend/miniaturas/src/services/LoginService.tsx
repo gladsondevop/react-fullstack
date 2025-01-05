@@ -1,10 +1,14 @@
-import axios from "axios";
+import axiosInstance from "../infra/axiosInstance";
 
 class LoginService {
-    serverPath = "/auth/login"
+    apiUrl = import.meta.env.VITE_API_URL;
 
-    login(usuario:String, senha:String) {
-        return axios.post("http://localhost:8080" + this.serverPath, {email: usuario, password:senha})
+    login(usuario:string, senha:string) {
+        return axiosInstance.post(this.apiUrl + "/auth/login", {email: usuario, password:senha})
+    }
+
+    myProfile() {
+        return axiosInstance.get(this.apiUrl + "/auth/my-profile")
     }
 
 }

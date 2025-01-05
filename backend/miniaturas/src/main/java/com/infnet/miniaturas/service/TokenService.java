@@ -33,7 +33,7 @@ public class TokenService {
         String valid = startsWithBearer(token);
         Algorithm algorithm = Algorithm.HMAC512(secret);
         JWTVerifier verifier = JWT.require(algorithm)
-                .withIssuer("ACME.COM")
+                .withIssuer("com.infnet.miniaturas")
                 .build();
         decodedJWT = verifier.verify(valid);
         return decodedJWT;

@@ -14,16 +14,14 @@ const Login: React.FC = () => {
     
 
     const handleSubmit = () => {
-        
         loginService.login(email, password).then((response) => {
             localStorage.setItem("token", response.data.token);
             console.log(response.data);
             navigate(0);
         }).catch((error) => {
             toastError();
-            console.log('teste error');
+            console.log(error);
         });
-    
       };
 
     return(
