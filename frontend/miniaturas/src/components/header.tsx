@@ -14,6 +14,7 @@ function Header() {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const [nomeUsuario, setNomeUsuario] = useState("");
+    const [iniciais, setIniciais] = useState("");
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -32,9 +33,15 @@ function Header() {
         loginService.myProfile().then((response) => {
             console.log(response);
             setNomeUsuario(response.data.nome);
+            getIniciais();
         });
     
       });
+    
+    const getIniciais = () => {
+        let nomes = nomeUsuario.split(" ");
+        setIniciais(nomes[0].substr(0,1)+nomes[1].substr(0,1))
+    }
 
 
     return (
@@ -51,7 +58,9 @@ function Header() {
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
                     >
-                        <Avatar sx={{ width: 40, height: 40, bgcolor: "#f3b61a" }}>GC</Avatar>
+                        <Avatar sx={{ width: 40, height: 40, bgcolor: "#f3b61a" }}>
+                            {iniciais}
+                        </Avatar>
                     </IconButton>
                 </Tooltip>
                 <Menu
